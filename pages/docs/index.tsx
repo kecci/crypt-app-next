@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import { useEffect, useState } from "react";
 import Axios from "axios";
-import Coin from "./components/Coin";
-import { CoinType } from "./types";
+import Coin from "../components/Coin";
+import { CoinType } from "../types";
 
 const Home: NextPage = () => {
   const [listOfCoins, setListOfCoins] = useState([]);
@@ -33,13 +33,13 @@ const Home: NextPage = () => {
         {filteredCoins.map((coin: CoinType) => {
           return (
             <Coin
+              id={coin.id}
               key={coin.id}
               name={coin.name}
               icon={coin.icon}
               price={coin.price}
               symbol={coin.symbol}
-               id={''}     
-                      />
+            />
           );
         })}
       </div>
